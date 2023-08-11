@@ -566,3 +566,30 @@ function descendingOrder(n) {
 console.log(descendingOrder(15));
 console.log(descendingOrder(1021));
 console.log(descendingOrder(123456789));
+
+const uniqueInOrder = function (iterable = "array") {
+  if (typeof iterable === "string") {
+    let array = iterable.split("");
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] !== array[i + 1]) {
+        array.slice(array[i], array[i + 1]);
+        result.push(array[i]);
+      }
+    }
+    return result;
+  } else {
+    let array = iterable;
+    let result = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] !== array[i + 1]) {
+        array.slice(array[i], array[i + 1]);
+        result.push(array[i]);
+      }
+    }
+    return result;
+  }
+};
+
+console.log(uniqueInOrder("AAAABBBCCDAABBB"));
+console.log(uniqueInOrder([1, 2, 2, 3, 3]));
