@@ -546,3 +546,23 @@ function isPangram(string) {
 
 console.log(isPangram("The quick brown fox jumps over the lazy dog."));
 console.log(isPangram("This is not a pangram."));
+
+function descendingOrder(n) {
+  const digits = String(n).split("");
+
+  for (let i = 0; i < digits.length; i++) {
+    digits[i] = Number(digits[i]);
+  }
+  let theHighestNumber = digits[0];
+  for (let i = 0; i < digits.length; i++) {
+    if (theHighestNumber < digits[i]) {
+      theHighestNumber = digits[i];
+    }
+  }
+  digits.sort((a, b) => b - a);
+  return Number(digits.join(""));
+}
+
+console.log(descendingOrder(15));
+console.log(descendingOrder(1021));
+console.log(descendingOrder(123456789));
