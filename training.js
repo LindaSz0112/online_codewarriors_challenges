@@ -593,3 +593,17 @@ const uniqueInOrder = function (iterable = "array") {
 
 console.log(uniqueInOrder("AAAABBBCCDAABBB"));
 console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+
+function order(words) {
+  const array = words.split(" ");
+  let newArray = [];
+  for (const el of array) {
+    newArray.push(el.split(""));
+  }
+  console.log(newArray);
+  for (const el of newArray) {
+  }
+}
+
+console.log(order("is2 Thi1s T4est 3a"));
+console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
