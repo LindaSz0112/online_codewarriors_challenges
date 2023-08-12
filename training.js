@@ -607,3 +607,26 @@ console.log(uniqueInOrder([1, 2, 2, 3, 3]));
 
 // console.log(order("is2 Thi1s T4est 3a"));
 // console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
+
+function drawStairs(n) {
+  let stairs = `I\n`;
+  let staircase = "";
+  for (let i = 0; i < n - 1; i++) {
+    staircase += `${" ".repeat(i)}${stairs}`;
+  }
+  staircase += " ".repeat(n - 1) + "I";
+  return staircase;
+}
+
+console.log(drawStairs(1));
+console.log(drawStairs(3));
+console.log(drawStairs(8));
+
+// I/n I/n
+// mert ha 1 > 0 space + 1 I/n; 2 eseten > n-1 space + n*I/n
+// let stairsRepeat = stairs.repeat(n);
+// return stairsRepeat;
+
+/* let spaces = (n === 0) | (n === 1) ? "" : " ";
+ let stairCase = stairs + spaces.repeat(n - 1) + stairs.repeat(n - 1);
+ return stairCase;*/
