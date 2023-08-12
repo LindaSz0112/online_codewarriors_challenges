@@ -648,3 +648,14 @@ console.log(likes(["Peter"]));
 console.log(likes(["Jacob", "Alex"]));
 console.log(likes(["Max", "John", "Mark"]));
 console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+
+const number = function (array) {
+  let modifiedArray = [];
+  for (const [i, el] of array.entries()) {
+    modifiedArray.push(`${i + 1}:${el}`);
+  }
+  return modifiedArray;
+};
+
+console.log(number([]));
+console.log(number(["a", "b", "c"]));
