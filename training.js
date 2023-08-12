@@ -622,11 +622,9 @@ console.log(drawStairs(1));
 console.log(drawStairs(3));
 console.log(drawStairs(8));
 
-// I/n I/n
-// mert ha 1 > 0 space + 1 I/n; 2 eseten > n-1 space + n*I/n
-// let stairsRepeat = stairs.repeat(n);
-// return stairsRepeat;
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
 
-/* let spaces = (n === 0) | (n === 1) ? "" : " ";
- let stairCase = stairs + spaces.repeat(n - 1) + stairs.repeat(n - 1);
- return stairCase;*/
+console.log(solution("abcde", "cde"));
+console.log(solution("abcde", "abc"));
