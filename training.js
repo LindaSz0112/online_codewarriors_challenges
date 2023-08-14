@@ -659,3 +659,31 @@ const number = function (array) {
 
 console.log(number([]));
 console.log(number(["a", "b", "c"]));
+
+// function tribonacci(signature, n) {
+//   while (signature.length < n) {
+//     let sum =
+//       signature[signature.length - 1] +
+//       signature[signature.length - 2] +
+//       signature[signature.length - 3];
+//     signature.push(sum);
+//   }
+//   return signature.slice(0, n);
+// }
+
+function tribonacci(signature, n) {
+  for (let i = 0; i < signature.length; i++) {
+    let sum = signature[i] + signature[i + 1] + signature[i + 2];
+    signature.push(sum);
+    if (signature.length >= n) {
+      break;
+    }
+  }
+  return signature.slice(0, n);
+}
+
+console.log(tribonacci([1, 1, 1], 10));
+console.log(tribonacci([0, 0, 1], 10));
+console.log(tribonacci([0, 1, 1], 10));
+console.log(tribonacci([1, 2, 3], 10));
+console.log(tribonacci([100, 200, 300], 0));
