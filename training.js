@@ -701,3 +701,13 @@ function getAge(inputString) {
 }
 
 console.log(getAge("4 years old"));
+
+function countSmileys(arr) {
+  const smiley = ")" || "D";
+  return arr.includes(smiley);
+}
+
+console.log(countSmileys([]));
+console.log(countSmileys([":D", ":~)", ";~D", ":)"]));
+console.log(countSmileys([":)", ":(", ":D", ":O", ":;"]));
+console.log(countSmileys([";]", ":[", ";*", ":$", ";-D"]));
