@@ -687,3 +687,11 @@ console.log(tribonacci([0, 0, 1], 10));
 console.log(tribonacci([0, 1, 1], 10));
 console.log(tribonacci([1, 2, 3], 10));
 console.log(tribonacci([100, 200, 300], 0));
+
+function removeEveryOther(arr) {
+  return arr.filter((element, index) => index % 2 === 0);
+}
+
+console.log(removeEveryOther(["Hello", "Goodbye", "Hello Again"]));
+console.log(removeEveryOther(["Goodbye"], { Great: "Job" }));
+console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
