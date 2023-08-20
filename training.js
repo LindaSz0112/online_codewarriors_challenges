@@ -713,17 +713,18 @@ function countSmileys(arr) {
   for (let i = 0; i < result.length; i++) {
     newArray.push(
       result[i].filter(
-        (character) => character.includes(")") || character.includes("D")
+        (character) => !character.includes("o") && !character.includes("_")
       )
     );
   }
+  console.log(newArray);
 
-  let filteredArray = newArray.filter((subArray) => subArray.length === 1);
+  //   let filteredArray = newArray.filter((subArray) => subArray.length === 1);
 
-  return filteredArray.length;
+  //   return filteredArray.length;
 }
 
 console.log(countSmileys([]));
-console.log(countSmileys([":D", ":~)", ";~D", ":)"]));
+console.log(countSmileys([":D", ":~)", ";~D", ":)", ":_D"]));
 console.log(countSmileys([":)", ":(", ":D", ":O", ":;"]));
 console.log(countSmileys([";]", ":[", ";*", ":$", ";-D"]));
