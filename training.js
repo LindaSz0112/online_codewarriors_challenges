@@ -702,27 +702,57 @@ function getAge(inputString) {
 
 console.log(getAge("4 years old"));
 
+// function countSmileys(arr) {
+//   let result = [];
+//   let newArray = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     const elements = arr[i].split("");
+//     result.push(elements);
+//   }
+
+//   for (let i = 0; i < result.length; i++) {
+//     newArray.push(
+//       result[i].filter(
+//         (character) =>
+//           (character.includes(")") || character.includes("D")) &&
+//           !character.includes("o") &&
+//           !character.includes("_") &&
+//           (character.length === 1 || character === "-" || character === "~")
+//       )
+//     );
+//   }
+//   console.log(newArray);
+
+//   let filteredArray = newArray.filter((subArray) => subArray.length === 1);
+
+//   return filteredArray.length;
+
 function countSmileys(arr) {
-  let result = [];
-  let newArray = [];
+  let count = 0;
+
   for (let i = 0; i < arr.length; i++) {
-    const elements = arr[i].split("");
-    result.push(elements);
+    const pattern = /^[:;][-~]?[)D]$/;
+    if (
+      pattern.test(arr[i]) &&
+      !arr[i].includes("o") &&
+      !arr[i].includes("_")
+    ) {
+      count++;
+    }
   }
 
-  for (let i = 0; i < result.length; i++) {
-    newArray.push(
-      result[i].filter(
-        (character) => !character.includes("o") && !character.includes("_")
-      )
-    );
-  }
-  console.log(newArray);
-
-  //   let filteredArray = newArray.filter((subArray) => subArray.length === 1);
-
-  //   return filteredArray.length;
+  return count;
 }
+
+// Certainly, let's break down the regular expression pattern ^[:;][-~]?[)D]$:
+
+// ^ and $: These symbols anchor the pattern to the start and end of the string, respectively. This means the entire string must match the pattern.
+
+// [:;]: This character class matches either ":" or ";". It's used to match the eyes of the smiley face.
+
+// [-~]?: This part is an optional character class that matches either "-" or "~". It represents the optional nose of the smiley face.
+
+// [)D]: This character class matches either ")" or "D". It represents the mouth of the smiley face.
 
 console.log(countSmileys([]));
 console.log(countSmileys([":D", ":~)", ";~D", ":)", ":_D"]));
