@@ -759,9 +759,39 @@ console.log(countSmileys([":D", ":~)", ";~D", ":)", ":_D"]));
 console.log(countSmileys([":)", ":(", ":D", ":O", ":;"]));
 console.log(countSmileys([";]", ":[", ";*", ":$", ";-D"]));
 
-const setAlarm = (employed, vacation) =>
-  employed === true && vacation === false ? true : false;
+const setAlarm = (employed, vacation) => (employed && !vacation ? true : false);
 
 console.log(setAlarm(true, true));
 console.log(setAlarm(false, true));
 console.log(setAlarm(true, false));
+
+function towerBuilder(n) {
+  let mainTower = [];
+  let towerFloor = "*";
+  for (let i = 1; i <= n; i++) {
+    if (n === 1) {
+      mainTower += `${towerFloor}`;
+    } else {
+      mainTower += `${" ".repeat(n - i)}${towerFloor.repeat(i)}`;
+    }
+  }
+  console.log(mainTower);
+}
+
+console.log(towerBuilder(1));
+console.log(towerBuilder(2));
+console.log(towerBuilder(5));
+
+// legfelso lepcso = n + (n-1)
+// a szokozek szama a legalso lepcson: n-1 mindket oldalon, csillag szama: n-(n-1)
+//
+
+// function drawStairs(n) {
+//   let stairs = `I\n`;
+//   let staircase = "";
+//   for (let i = 0; i < n - 1; i++) {
+//     staircase += `${" ".repeat(i)}${stairs}`;
+//   }
+//   staircase += " ".repeat(n - 1) + "I";
+//   return staircase;
+// }
