@@ -758,3 +758,10 @@ console.log(countSmileys([]));
 console.log(countSmileys([":D", ":~)", ";~D", ":)", ":_D"]));
 console.log(countSmileys([":)", ":(", ":D", ":O", ":;"]));
 console.log(countSmileys([";]", ":[", ";*", ":$", ";-D"]));
+
+const setAlarm = (employed, vacation) =>
+  employed === true && vacation === false ? true : false;
+
+console.log(setAlarm(true, true));
+console.log(setAlarm(false, true));
+console.log(setAlarm(true, false));
