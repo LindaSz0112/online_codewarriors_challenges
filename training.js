@@ -768,14 +768,12 @@ console.log(setAlarm(true, false));
 function towerBuilder(n) {
   let mainTower = [];
   let towerFloor = "*";
-  for (let i = 1; i <= n; i++) {
-    if (n === 1) {
-      mainTower += `${towerFloor}`;
-    } else {
-      mainTower += `${" ".repeat(n - i)}${towerFloor.repeat(i)}`;
-    }
+  for (let i = 0; i <= n - 1; i++) {
+    mainTower +=
+      `${" ".repeat(n - 1 - i)}` + `${towerFloor.repeat(i + (i + 1))} `;
+    // +`${" ".repeat(n - 1 - i)}`;
   }
-  console.log(mainTower);
+  console.log(mainTower.split(""));
 }
 
 console.log(towerBuilder(1));
