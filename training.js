@@ -766,14 +766,15 @@ console.log(setAlarm(false, true));
 console.log(setAlarm(true, false));
 
 function towerBuilder(n) {
-  let mainTower = [];
-  let towerFloor = "*";
-  for (let i = 0; i <= n - 1; i++) {
-    mainTower +=
-      `${" ".repeat(n - 1 - i)}` + `${towerFloor.repeat(i + (i + 1))} `;
-    // +`${" ".repeat(n - 1 - i)}`;
+  let mainFloor = "*";
+  let tower = [];
+  for (let i = 0; i < n; i++) {
+    let spaces = " ";
+    tower += `${spaces.repeat(n - 1)}${mainFloor.repeat(
+      2 * i + 1
+    )}${spaces.repeat(n - 1)}`;
   }
-  console.log(mainTower.split(""));
+  console.log(tower);
 }
 
 console.log(towerBuilder(1));
