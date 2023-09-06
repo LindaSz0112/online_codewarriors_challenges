@@ -770,11 +770,12 @@ function towerBuilder(n) {
   let tower = [];
   for (let i = 0; i < n; i++) {
     let spaces = " ";
-    tower += `${spaces.repeat(n - 1)}${mainFloor.repeat(
+    let line = `${spaces.repeat(n - 1 - i)}${mainFloor.repeat(
       2 * i + 1
-    )}${spaces.repeat(n - 1)}`;
+    )}${spaces.repeat(n - 1 - i)}`;
+    tower.push(line);
   }
-  console.log(tower);
+  return tower.join("\n").split("\n");
 }
 
 console.log(towerBuilder(1));
