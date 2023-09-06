@@ -795,3 +795,40 @@ console.log(towerBuilder(5));
 //   staircase += " ".repeat(n - 1) + "I";
 //   return staircase;
 // }
+
+function greetNew(language) {
+  const welcomeLanguages = {
+    english: "Welcome",
+    czech: "Vitejte",
+    danish: "Velkomst",
+    dutch: "Welkom",
+    estonian: "Tere tulemast",
+    finnish: "Tervetuloa",
+    flemish: "Welgekomen",
+    french: "Bienvenue",
+    german: "Willkommen",
+    irish: "Failte",
+    italian: "Benvenuto",
+    latvian: "Gaidits",
+    lithuanian: "Laukiamas",
+    polish: "Witamy",
+    spanish: "Bienvenido",
+    swedish: "Valkommen",
+    welsh: "Croeso",
+  };
+  if (welcomeLanguages.hasOwnProperty(language))
+    return (
+      welcomeLanguages[language] +
+      ` Your function should have returned '${welcomeLanguages[language]}'. Try again.`
+    );
+  else {
+    return (
+      `${welcomeLanguages.english} ` +
+      `Your function should have returned 'Welcome'. Try again.`
+    );
+  }
+}
+
+console.log(greetNew("english"));
+console.log(greetNew("dutch"));
+console.log(greetNew("IP_ADDRESS_INVALID"));
