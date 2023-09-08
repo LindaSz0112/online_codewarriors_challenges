@@ -845,7 +845,12 @@ console.log(sumMix(["5", "0", 9, 3, 2, 1, "9", 6, 7]));
 console.log(sumMix(["3", 6, 6, 0, "5", 8, 5, "6", 2, "0"]));
 
 function count(string) {
-  return {};
+  const elements = string.split("");
+  let object = {};
+  return elements.reduce((obj, item) => {
+    obj[item] = (obj[item] || 0) + 1;
+    return obj;
+  }, object);
 }
 
 console.log(count(""));
@@ -853,3 +858,11 @@ console.log(count("a"));
 console.log(count("ab"));
 console.log(count("aba"));
 console.log(count("ABC"));
+
+// const initialValue = {};
+// return array.reduce((obj, item) => {
+//   return {
+//     ...obj,
+//     [item[key]]: item,
+//   };
+// }, initialValue);
