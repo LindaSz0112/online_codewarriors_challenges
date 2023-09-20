@@ -848,7 +848,7 @@ function count(string) {
   const elements = string.split("");
   let object = {};
   return elements.reduce((obj, item) => {
-    obj[item] = (obj[item] || 0) + 1;
+    obj[item] = (obj[item] || 0) + 1; //  (obj[item] || 0) ensures that if the character hasn't been encountered before, it starts with a count of 0
     return obj;
   }, object);
 }
@@ -866,3 +866,5 @@ console.log(count("ABC"));
 //     [item[key]]: item,
 //   };
 // }, initialValue);
+
+// ||: The double pipe || is the logical OR operator in JavaScript. It returns the first truthy value it encounters from left to right. If all values are falsy, it returns the last value.
