@@ -883,3 +883,22 @@ console.log(twoSum([1, 2, 3], 4));
 console.log(twoSum([1234, 5678, 9012], 14690));
 console.log(twoSum([2, 2, 3], 4));
 console.log(twoSum([2, 3, 1], 3));
+
+function duplicateCount(text) {
+  const modifiedText = text.toLowerCase().split("");
+  const duplicates = new Set();
+  for (let i = 0; i < modifiedText.length; i++) {
+    const value = modifiedText[i];
+
+    if (modifiedText.indexOf(value, i + 1) !== -1) {
+      duplicates.add(value);
+    } // -1 is returned if a duplicate isnot found, JS convention
+  }
+  return duplicates.size;
+}
+
+console.log(duplicateCount(""));
+console.log(duplicateCount("abcde"));
+console.log(duplicateCount("aabbcde"));
+console.log(duplicateCount("aabBcde"));
+console.log(duplicateCount("Indivisibility"));
