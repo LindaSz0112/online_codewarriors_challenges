@@ -921,3 +921,19 @@ function getGrade(s1, s2, s3) {
 console.log(getGrade(95, 90, 93));
 console.log(getGrade(70, 70, 100));
 console.log(getGrade(70, 71, 70));
+
+function powersOfTwo(n) {
+  const array = [];
+  for (let i = 0; i <= n; i++) {
+    array.push(2 ** (n - i));
+  }
+  return array.reverse();
+}
+
+// function powersOfTwo(n) {
+//   return [...Array(n + 1)].map((_, i) => 2 ** i);
+// }
+
+console.log(powersOfTwo(0));
+console.log(powersOfTwo(1));
+console.log(powersOfTwo(4));
