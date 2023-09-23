@@ -937,3 +937,20 @@ function powersOfTwo(n) {
 console.log(powersOfTwo(0));
 console.log(powersOfTwo(1));
 console.log(powersOfTwo(4));
+
+function removeExclamationMarks(s) {
+  return s
+    .split("")
+    .filter((element) => element !== "!")
+    .join("");
+}
+
+console.log(removeExclamationMarks("Hello World!"));
+
+function isPalindrome(x) {
+  const lowerCase = x.toLowerCase();
+  return lowerCase === lowerCase.split("").reverse().join("") ? true : false;
+}
+
+console.log(isPalindrome("ABBA"));
+console.log(isPalindrome("Bichito"));
