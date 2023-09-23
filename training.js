@@ -868,3 +868,18 @@ console.log(count("ABC"));
 // }, initialValue);
 
 // ||: The double pipe || is the logical OR operator in JavaScript. It returns the first truthy value it encounters from left to right. If all values are falsy, it returns the last value.
+
+function twoSum(numbers, target) {
+  for (let i = 0; i <= numbers.length; i++) {
+    const otherNumber = target - numbers[i];
+    const secondIndex = numbers.indexOf(otherNumber, i + 1);
+    if (numbers.includes(otherNumber)) {
+      return [i, secondIndex];
+    }
+  }
+}
+
+console.log(twoSum([1, 2, 3], 4));
+console.log(twoSum([1234, 5678, 9012], 14690));
+console.log(twoSum([2, 2, 3], 4));
+console.log(twoSum([2, 3, 1], 3));
