@@ -886,7 +886,7 @@ console.log(twoSum([2, 3, 1], 3));
 
 function duplicateCount(text) {
   const modifiedText = text.toLowerCase().split("");
-  const duplicates = new Set();
+  const duplicates = new Set(); //using a Set, each character is added only once
   for (let i = 0; i < modifiedText.length; i++) {
     const value = modifiedText[i];
 
@@ -902,3 +902,22 @@ console.log(duplicateCount("abcde"));
 console.log(duplicateCount("aabbcde"));
 console.log(duplicateCount("aabBcde"));
 console.log(duplicateCount("Indivisibility"));
+
+function getGrade(s1, s2, s3) {
+  const percentage = (s1 + s2 + s3) / 3;
+  if (percentage >= 90) {
+    return "A";
+  } else if (percentage >= 80) {
+    return "B";
+  } else if (percentage >= 70) {
+    return "C";
+  } else if (percentage >= 60) {
+    return "D";
+  } else {
+    return "F";
+  }
+}
+
+console.log(getGrade(95, 90, 93));
+console.log(getGrade(70, 70, 100));
+console.log(getGrade(70, 71, 70));
