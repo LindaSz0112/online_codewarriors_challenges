@@ -954,3 +954,22 @@ function isPalindrome(x) {
 
 console.log(isPalindrome("ABBA"));
 console.log(isPalindrome("Bichito"));
+
+function findShort(s) {
+  const arrayOfWords = s.split(" ");
+  let shortestWord = arrayOfWords[0];
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    if (shortestWord.length > arrayOfWords[i].length) {
+      shortestWord = arrayOfWords[i];
+    }
+  }
+  return shortestWord.length;
+}
+
+console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+console.log(
+  findShort(
+    "turns out random test cases are easier than writing out basic ones"
+  )
+);
+console.log(findShort("Let's travel abroad shall we"));
