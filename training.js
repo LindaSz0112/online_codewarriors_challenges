@@ -980,3 +980,15 @@ function sumStr(a, b) {
 
 console.log(sumStr("4", "5"));
 console.log(sumStr("34", "5"));
+
+const isSquare = function (n) {
+  const squareRoot = Math.sqrt(n);
+  return Math.floor(squareRoot) === squareRoot ? true : false;
+};
+
+console.log(isSquare(-1));
+console.log(isSquare(0));
+console.log(isSquare(3));
+console.log(isSquare(4));
+console.log(isSquare(25));
+console.log(isSquare(26));
