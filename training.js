@@ -992,3 +992,27 @@ console.log(isSquare(3));
 console.log(isSquare(4));
 console.log(isSquare(25));
 console.log(isSquare(26));
+
+// function sumDigPow(a, b) {
+//   const array = [];
+//   for (let i = a; i <= b; i++) {
+//     array.push(i);
+//   }
+//   return array;
+// }
+
+// console.log(sumDigPow(1, 10)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// console.log(sumDigPow(1, 100)); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 89]
+// console.log(sumDigPow(90, 100)); // []
+// console.log(sumDigPow(90, 150)); //[135]
+
+function printerError(s) {
+  const arrayLetters = s
+    .split("")
+    .filter((letter) => /[nopqrstuvwxyz]/g.test(letter));
+  return `${arrayLetters.length}/${s.length}`;
+}
+
+console.log(
+  printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz")
+);
