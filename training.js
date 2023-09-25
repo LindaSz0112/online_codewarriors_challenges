@@ -1136,3 +1136,35 @@ function enough(cap, on, wait) {
 console.log(enough(20, 5, 5));
 console.log(enough(100, 60, 50));
 console.log(enough(10, 5, 5));
+
+function points(games) {
+  const switchedArray = games
+    .map((el) => el.replace(":", "-"))
+    .map((el) => {
+      let parts = el.split("-");
+      let firstElement = parseFloat(parts[0]);
+      let secondElement = parseFloat(parts[1]);
+      return firstElement - secondElement;
+    });
+  const arrayNew = [];
+  for (let element of switchedArray) {
+    if (element > 0) {
+      arrayNew.push((element = 3));
+    } else if (element === 0) {
+      arrayNew.push((element = 1));
+    } else {
+      arrayNew.push((element = 0));
+    }
+  }
+  return arrayNew.reduce((acc, value) => acc + value, 0);
+}
+
+console.log(
+  points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"])
+); //30
+console.log(
+  points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"])
+); //10
+console.log(
+  points(["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"])
+); //0
