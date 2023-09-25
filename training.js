@@ -1086,3 +1086,16 @@ function switchItUp(number) {
 }
 
 console.log(switchItUp(8));
+
+const summation = function (num) {
+  let count = 0;
+  for (let i = 0; i <= num; i++) {
+    count += i;
+  }
+  return count;
+};
+
+console.log(summation(1));
+console.log(summation(2));
+console.log(summation(4));
+console.log(summation(8));
