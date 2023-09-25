@@ -1118,3 +1118,12 @@ console.log(nbDig(5750, 0));
 console.log(nbDig(11011, 2));
 console.log(nbDig(12224, 8));
 console.log(nbDig(11549, 1));
+
+function positiveSum(arr) {
+  return arr.filter((el) => el >= 0).reduce((acc, value) => acc + value, 0);
+}
+
+console.log(positiveSum([1, 2, 3, 4, 5]));
+console.log(positiveSum([1, -2, 3, 4, 5]));
+console.log(positiveSum([]));
+console.log(positiveSum([-1, -2, -3, -4, -5]));
