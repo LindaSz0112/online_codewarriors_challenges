@@ -1168,3 +1168,99 @@ console.log(
 console.log(
   points(["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"])
 ); //0
+
+function howMuch(m, n) {
+  if (m < n) {
+    let array = [];
+    for (let i = 0; i <= n - m; i++) {
+      array.push(m + i);
+    }
+    const money = array
+      .filter((el) => el % 7 === 2 && el % 9 === 1)
+      .map((element) => [element])
+      .map((el) => [
+        `M: ${el[0]}`,
+        `B: ${(el[0] - 2) / 7}`,
+        `C: ${(el[0] - 1) / 9}`,
+      ]);
+    return money;
+  } else if (m > n) {
+    let array = [];
+    for (let i = 0; i <= m - n; i++) {
+      array.push(n + i);
+    }
+    const money = array
+      .filter((el) => el % 7 === 2 && el % 9 === 1)
+      .map((element) => [element])
+      .map((el) => [
+        `M: ${el[0]}`,
+        `B: ${(el[0] - 2) / 7}`,
+        `C: ${(el[0] - 1) / 9}`,
+      ]);
+    return money;
+  } else {
+    return [];
+  }
+}
+
+console.log(howMuch(1, 100));
+console.log(howMuch(2950, 2950));
+
+const numbers = function (busStops) {
+  if (busStops[0] - busStops[1] === 0) {
+    return 0;
+  } else {
+    let sumArray = [];
+    for (let i = 0; i < busStops.length; i++) {
+      let subArray = busStops[i];
+      sumArray.push(subArray[0] - subArray[1]);
+    }
+    return sumArray.reduce((acc, value) => acc + value, 0);
+  }
+};
+
+console.log(
+  numbers([
+    [10, 0],
+    [3, 5],
+    [5, 8],
+  ])
+);
+console.log(
+  numbers([
+    [3, 0],
+    [9, 1],
+    [4, 10],
+    [12, 2],
+    [6, 1],
+    [7, 10],
+  ])
+);
+console.log(
+  numbers([
+    [3, 0],
+    [9, 1],
+    [4, 8],
+    [12, 2],
+    [6, 1],
+    [7, 8],
+  ])
+);
+console.log(numbers([0, 0]));
+
+function countPositivesSumNegatives(input) {
+  if (input === null || (input[0] === 0 && input[1] === 0)) {
+    return [];
+  } else {
+    let positives = input.filter((el) => el > 0 && el !== 0);
+    let negatives = input.filter((el) => el < 0 && el !== 0);
+    return [positives.length, negatives.reduce((acc, el) => acc + el, 0)];
+  }
+}
+
+console.log(
+  countPositivesSumNegatives([
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15,
+  ])
+);
+console.log(countPositivesSumNegatives([0, 0]));
