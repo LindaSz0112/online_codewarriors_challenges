@@ -1099,3 +1099,22 @@ console.log(summation(1));
 console.log(summation(2));
 console.log(summation(4));
 console.log(summation(8));
+
+function nbDig(n, d) {
+  let array = [];
+  for (let i = 0; i <= n; i++) {
+    array.push(i ** 2);
+  }
+
+  return array
+    .toString()
+    .split("")
+    .filter((el) => el === String(d)).length;
+}
+
+console.log(nbDig(10, 1));
+
+console.log(nbDig(5750, 0));
+console.log(nbDig(11011, 2));
+console.log(nbDig(12224, 8));
+console.log(nbDig(11549, 1));
