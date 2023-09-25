@@ -1127,3 +1127,12 @@ console.log(positiveSum([1, 2, 3, 4, 5]));
 console.log(positiveSum([1, -2, 3, 4, 5]));
 console.log(positiveSum([]));
 console.log(positiveSum([-1, -2, -3, -4, -5]));
+
+function enough(cap, on, wait) {
+  const currentState = cap - (on + wait);
+  return currentState >= 0 ? 0 : currentState * -1;
+}
+
+console.log(enough(20, 5, 5));
+console.log(enough(100, 60, 50));
+console.log(enough(10, 5, 5));
