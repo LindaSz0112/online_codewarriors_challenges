@@ -1321,3 +1321,8 @@ console.log(stray([2, 1, 1]));
 
 //   return uniqueNumber;
 // }
+
+const disemvowel = (str) => str.replace(/[aeiouAEIOU]/g, "");
+
+console.log(disemvowel("This website is for losers LOL!"));
+console.log(disemvowel("What are you, a communist?"));
