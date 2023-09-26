@@ -1328,7 +1328,6 @@ console.log(disemvowel("This website is for losers LOL!"));
 console.log(disemvowel("What are you, a communist?"));
 
 function dirReduc(arr) {
-  let emptyArray = [];
   for (let i = 0; i <= arr.length; i++) {
     if (arr[i] === "NORTH" && arr[i + 1] === "SOUTH") {
       arr.splice(i, 2);
@@ -1352,3 +1351,12 @@ console.log(
 );
 console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
 console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
+
+function findNextSquare(sq) {
+  const square = Math.sqrt(sq) + 1;
+  return square === Math.floor(square) ? square ** 2 : -1;
+}
+
+console.log(findNextSquare(121));
+console.log(findNextSquare(155));
+console.log(findNextSquare(625));
