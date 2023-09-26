@@ -1326,3 +1326,29 @@ const disemvowel = (str) => str.replace(/[aeiouAEIOU]/g, "");
 
 console.log(disemvowel("This website is for losers LOL!"));
 console.log(disemvowel("What are you, a communist?"));
+
+function dirReduc(arr) {
+  let emptyArray = [];
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr[i] === "NORTH" && arr[i + 1] === "SOUTH") {
+      arr.splice(i, 2);
+      i -= 2;
+    } else if (arr[i] === "SOUTH" && arr[i + 1] === "NORTH") {
+      arr.splice(i, 2);
+      i -= 2;
+    } else if (arr[i] === "EAST" && arr[i + 1] === "WEST") {
+      arr.splice(i, 2);
+      i -= 2;
+    } else if (arr[i] === "WEST" && arr[i + 1] === "EAST") {
+      arr.splice(i, 2);
+      i -= 2;
+    }
+  }
+  return arr;
+}
+
+console.log(
+  dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+);
+console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
+console.log(dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]));
