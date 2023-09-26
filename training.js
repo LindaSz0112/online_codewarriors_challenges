@@ -1274,3 +1274,25 @@ console.log(check(["t", "e", "s", "t"], "e"));
 const stringToArray = (string) => string.split(" ");
 
 console.log(stringToArray("I love arrays they are my favorite"));
+
+function howMuchILoveYou(nbPetals) {
+  const options = [
+    "I love you",
+    "a little",
+    "a lot",
+    "passionately",
+    "madly",
+    "not at all",
+  ];
+  if (nbPetals <= 6) {
+    return options[nbPetals - 1];
+  } else {
+    const numberOption = nbPetals % 6;
+    return numberOption === 0 ? options[5] : options[numberOption - 1];
+  }
+}
+
+console.log(howMuchILoveYou(7));
+console.log(howMuchILoveYou(3));
+console.log(howMuchILoveYou(6));
+console.log(howMuchILoveYou(348));
