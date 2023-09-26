@@ -1296,3 +1296,28 @@ console.log(howMuchILoveYou(7));
 console.log(howMuchILoveYou(3));
 console.log(howMuchILoveYou(6));
 console.log(howMuchILoveYou(348));
+
+function stray(numbers) {
+  let uniqueNumber = numbers[0];
+  let elementsArray = [];
+  for (let i = 0; i < numbers.length; i++) {
+    elementsArray = numbers.filter((el) => el !== uniqueNumber);
+  }
+  return elementsArray.length > 1 ? uniqueNumber : elementsArray[0];
+}
+
+console.log(stray([17, 17, 3, 17, 17, 17, 17]));
+console.log(stray([1, 1, 2]));
+console.log(stray([2, 1, 1]));
+
+// optimized code by ChatGPT
+
+// function stray(numbers) {
+//   let uniqueNumber = numbers[0];
+// XOR (^) operation cancels out duplicate numbers
+//   for (let i = 1; i < numbers.length; i++) {
+//     uniqueNumber ^= numbers[i];
+//   }
+
+//   return uniqueNumber;
+// }
