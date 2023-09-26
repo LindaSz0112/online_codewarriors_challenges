@@ -1264,3 +1264,13 @@ console.log(
   ])
 );
 console.log(countPositivesSumNegatives([0, 0]));
+
+const check = (a, x) => a.includes(x);
+
+console.log(check([66, 101], 66));
+console.log(check([101, 45, 75, 105, 99, 107], 108));
+console.log(check(["t", "e", "s", "t"], "e"));
+
+const stringToArray = (string) => string.split(" ");
+
+console.log(stringToArray("I love arrays they are my favorite"));
