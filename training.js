@@ -1422,3 +1422,17 @@ console.log(checkForFactor(10, 2));
 console.log(checkForFactor(63, 7));
 console.log(checkForFactor(9, 2));
 console.log(checkForFactor(2453, 5));
+
+function findUniq(arr) {
+  let differentElement = arr[0];
+  let clearArray = [];
+  for (let i = 1; i < arr.length; i++) {
+    if (differentElement !== arr[i]) {
+      clearArray.push(arr[i]);
+    }
+  }
+  return clearArray.length === 1 ? clearArray[0] : differentElement;
+}
+
+console.log(findUniq([1, 0, 0]));
+console.log(findUniq([3, 10, 3, 3, 3]));
