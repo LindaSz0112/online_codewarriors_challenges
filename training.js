@@ -1394,3 +1394,31 @@ const areYouPlayingBanjo = (name) =>
 console.log(areYouPlayingBanjo("Adam"));
 console.log(areYouPlayingBanjo("Ringo"));
 console.log(areYouPlayingBanjo("rolf"));
+
+function openOrSenior(data) {
+  let results = [];
+  for (const el of data) {
+    if (el[0] >= 55 && el[1] > 7) {
+      results.push("Senior");
+    } else {
+      results.push("Open");
+    }
+  }
+  return results;
+}
+
+console.log(
+  openOrSenior([
+    [45, 12],
+    [55, 21],
+    [19, -2],
+    [104, 20],
+  ])
+);
+
+const checkForFactor = (base, factor) => base % factor === 0;
+
+console.log(checkForFactor(10, 2));
+console.log(checkForFactor(63, 7));
+console.log(checkForFactor(9, 2));
+console.log(checkForFactor(2453, 5));
