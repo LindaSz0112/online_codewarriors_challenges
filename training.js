@@ -1469,15 +1469,16 @@ function longest(s1, s2) {
 console.log(longest("aretheyhere", "yestheyarehere"));
 console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
 
-// function duplicateCount(text) {
-//   const modifiedText = text.toLowerCase().split("");
-//   const duplicates = new Set(); //using a Set, each character is added only once
-//   for (let i = 0; i < modifiedText.length; i++) {
-//     const value = modifiedText[i];
-
-//     if (modifiedText.indexOf(value, i + 1) !== -1) {
-//       duplicates.add(value);
-//     } // -1 is returned if a duplicate isnot found, JS convention
-//   }
-//   return duplicates.size;
+// optimized code
+// function longest(s1, s2) {
+//   return Array.from(new Set(s1 + s2))
+//     .sort()
+//     .join("");
 // }
+
+const rentalCarCost = (d) =>
+  d >= 3 && d < 7 ? d * 40 - 20 : d >= 7 ? d * 40 - 50 : d * 40;
+
+console.log(rentalCarCost(1));
+console.log(rentalCarCost(5));
+console.log(rentalCarCost(8));
