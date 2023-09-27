@@ -1482,3 +1482,9 @@ const rentalCarCost = (d) =>
 console.log(rentalCarCost(1));
 console.log(rentalCarCost(5));
 console.log(rentalCarCost(8));
+
+const saleHotdogs = (n) =>
+  n < 5 ? n * 100 : n >= 5 && n < 10 ? n * 95 : n * 90;
+console.log(saleHotdogs(1));
+console.log(saleHotdogs(5));
+console.log(saleHotdogs(100));
