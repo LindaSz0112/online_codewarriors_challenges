@@ -1378,3 +1378,10 @@ function removeSmallest(numbers) {
 console.log(removeSmallest([2, 2, 1, 2, 1]));
 console.log(removeSmallest([1, 2, 3, 4, 5]));
 console.log(removeSmallest([5, 3, 2, 1, 4]));
+
+const hero = (bullets, dragons) => 2 * dragons <= bullets;
+
+console.log(hero(10, 5));
+console.log(hero(1500, 751));
+console.log(hero(100, 40));
+console.log(hero(7, 4));
