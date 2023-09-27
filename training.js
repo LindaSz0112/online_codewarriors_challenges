@@ -1385,3 +1385,12 @@ console.log(hero(10, 5));
 console.log(hero(1500, 751));
 console.log(hero(100, 40));
 console.log(hero(7, 4));
+
+const areYouPlayingBanjo = (name) =>
+  name[0] === "r" || name[0] === "R"
+    ? `${name} plays banjo`
+    : `${name} does not play banjo`;
+
+console.log(areYouPlayingBanjo("Adam"));
+console.log(areYouPlayingBanjo("Ringo"));
+console.log(areYouPlayingBanjo("rolf"));
