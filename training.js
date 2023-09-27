@@ -1360,3 +1360,21 @@ function findNextSquare(sq) {
 console.log(findNextSquare(121));
 console.log(findNextSquare(155));
 console.log(findNextSquare(625));
+
+function removeSmallest(numbers) {
+  let theSmallest = numbers[0];
+  let index = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (theSmallest > numbers[i]) {
+      theSmallest = numbers[i];
+      index = i;
+    }
+  }
+  // creating new array with the slice method, withoit the smallest element and then joining them
+  const result = [...numbers.slice(0, index), ...numbers.slice(index + 1)];
+  return result;
+}
+
+console.log(removeSmallest([2, 2, 1, 2, 1]));
+console.log(removeSmallest([1, 2, 3, 4, 5]));
+console.log(removeSmallest([5, 3, 2, 1, 4]));
