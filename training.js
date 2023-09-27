@@ -1436,3 +1436,48 @@ function findUniq(arr) {
 
 console.log(findUniq([1, 0, 0]));
 console.log(findUniq([3, 10, 3, 3, 3]));
+
+//OPtimized code:
+
+// function findUniq(arr) {
+//   const firstElement = arr[0];
+
+//   for (let i = 1; i < arr.length; i++) {
+//     if (firstElement !== arr[i]) {
+//       return arr[i];
+//     }
+//   }
+
+//   return firstElement;
+// }
+
+// The lastIndexOf() method is a built-in JavaScript array method that allows you to search for the last occurrence of a specified element in an array. It returns the index of the last occurrence of the element or -1 if the element is not found in the array.
+
+const areaOrPerimeter = (l, w) => (l === w ? l * w : (l + w) * 2);
+
+console.log(areaOrPerimeter(3, 3));
+console.log(areaOrPerimeter(6, 10));
+
+function longest(s1, s2) {
+  let duplicates1 = Array.from(new Set(s1.split("")));
+  let duplicates2 = Array.from(new Set(s2.split("")));
+
+  let [...array] = [...duplicates1, ...duplicates2];
+  return Array.from(new Set(array)).sort().join("");
+}
+
+console.log(longest("aretheyhere", "yestheyarehere"));
+console.log(longest("loopingisfunbutdangerous", "lessdangerousthancoding"));
+
+// function duplicateCount(text) {
+//   const modifiedText = text.toLowerCase().split("");
+//   const duplicates = new Set(); //using a Set, each character is added only once
+//   for (let i = 0; i < modifiedText.length; i++) {
+//     const value = modifiedText[i];
+
+//     if (modifiedText.indexOf(value, i + 1) !== -1) {
+//       duplicates.add(value);
+//     } // -1 is returned if a duplicate isnot found, JS convention
+//   }
+//   return duplicates.size;
+// }
