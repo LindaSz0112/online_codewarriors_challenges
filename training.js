@@ -1617,3 +1617,11 @@ function solution(string) {
 console.log(solution("camelCasing"));
 console.log(solution("camelCasingTest"));
 console.log(solution("identifier"));
+
+const countSheeps = (sheep) => sheep.filter((el) => el === true).length;
+
+console.log(
+  countSheeps([undefined, null, false, true, true, false, null, undefined])
+);
+console.log(countSheeps([]));
+console.log(countSheeps([false]));
