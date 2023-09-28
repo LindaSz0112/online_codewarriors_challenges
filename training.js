@@ -1488,3 +1488,21 @@ const saleHotdogs = (n) =>
 console.log(saleHotdogs(1));
 console.log(saleHotdogs(5));
 console.log(saleHotdogs(100));
+
+const findDifference = (a, b) =>
+  Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2]);
+
+//By wrapping the calculation with Math.abs(), it ensures that the result is always a positive number
+
+console.log(findDifference([11, 2, 5], [1, 10, 8]));
+console.log(findDifference([3, 2, 5], [1, 4, 4]));
+console.log(findDifference([4, 4, 7], [3, 9, 3]));
+console.log(findDifference([22, 10, 7], [29, 14, 26]));
+
+//code variation recommended by ChatGPT
+
+// const findDifference = (a, b) => {
+//   const productA = a.reduce((acc, val) => acc * val, 1);
+//   const productB = b.reduce((acc, val) => acc * val, 1);
+//   return Math.abs(productA - productB);
+// };
