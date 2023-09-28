@@ -1596,3 +1596,24 @@ function getRealFloor(n) {
 console.log(getRealFloor(1));
 console.log(getRealFloor(15));
 console.log(getRealFloor(-2));
+
+function solution(string) {
+  const index = string
+    .split("")
+    .map((char, index) => {
+      if (/[A-Z]/.test(char)) {
+        return index;
+      }
+      return -1;
+    })
+    .filter((index) => index !== -1);
+  for (let i = index.length - 1; i >= 0; i--) {
+    string = string.slice(0, index[i]) + " " + string.slice(index[i]);
+  }
+
+  return string;
+}
+
+console.log(solution("camelCasing"));
+console.log(solution("camelCasingTest"));
+console.log(solution("identifier"));
