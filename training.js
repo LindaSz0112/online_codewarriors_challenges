@@ -1625,3 +1625,28 @@ console.log(
 );
 console.log(countSheeps([]));
 console.log(countSheeps([false]));
+
+function vowelShift(text, n) {
+  const brokenArray = text.split("");
+  const indexes = brokenArray
+    .map((char, index) => {
+      if (/[aeiouAEIOU]/.test(char)) {
+        return index;
+      }
+      return -1;
+    })
+    .filter((index) => index !== -1);
+
+  for (let i = 0; i < indexes.length; i++) {
+    const currentIndex = indexes[i];
+    const shiftedIndex = (currentIndex + n) % brokenArray.length;
+
+    // Replace the vowel at currentIndex with the shifted vowel
+    brokenArray[currentIndex] = brokenArray[shiftedIndex];
+  }
+  return brokenArray.join("");
+}
+
+// console.log(vowelShift("This is a test!", 0));
+console.log(vowelShift("This is a test!", 1));
+// console.log(vowelShift("This is a test!", 3));
