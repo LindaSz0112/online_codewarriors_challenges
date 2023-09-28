@@ -1566,3 +1566,33 @@ console.log(alphabetPosition("The sunset sets at twelve o' clock."));
 console.log(alphabetPosition("The narwhal bacons at midnight."));
 
 // The hasOwnProperty() method is a built-in method in JavaScript that is used to check if an object has a specific property. It returns a boolean value indicating whether the object contains the specified property as a direct (non-inherited) property.
+
+function between(a, b) {
+  let arrayBetween = [];
+  for (let i = 0; i < b - a + 1; i++) {
+    arrayBetween.push(a + i);
+  }
+  return arrayBetween;
+}
+
+console.log(between(1, 4));
+console.log(between(-2, 2));
+console.log(between(90, 100));
+
+//optimized code variation by chat GPT
+
+// function between(a, b) {
+//   return Array.from({ length: b - a + 1 }, (_, index) => a + index);
+// }
+
+function getRealFloor(n) {
+  if (n > 0 && n <= 12) {
+    return n - 1;
+  } else if (n > 0 && n >= 13) {
+    return n - 2;
+  } else return n;
+}
+
+console.log(getRealFloor(1));
+console.log(getRealFloor(15));
+console.log(getRealFloor(-2));
