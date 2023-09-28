@@ -1506,3 +1506,14 @@ console.log(findDifference([22, 10, 7], [29, 14, 26]));
 //   const productB = b.reduce((acc, val) => acc * val, 1);
 //   return Math.abs(productA - productB);
 // };
+
+const square = (n) => n ** 2;
+
+console.log(square(3));
+
+// code variation
+// function square(num){
+//   var num = Math.pow(num, 2);
+//   return num;
+// };
+// it computes the power of a number. > Math.pow(base, exponent);
