@@ -1637,14 +1637,8 @@ function vowelShift(text, n) {
     })
     .filter((index) => index !== -1);
 
-  for (let i = 0; i < indexes.length; i++) {
-    const currentIndex = indexes[i];
-    const shiftedIndex = (currentIndex + n) % brokenArray.length;
-
-    // Replace the vowel at currentIndex with the shifted vowel
-    brokenArray[currentIndex] = brokenArray[shiftedIndex];
-  }
-  return brokenArray.join("");
+  for (let i = 0; i < indexes.length; i++) {}
+  return brokenArray.join(" ");
 }
 
 // console.log(vowelShift("This is a test!", 0));
