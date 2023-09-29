@@ -1636,11 +1636,19 @@ function vowelShift(text, n) {
       return -1;
     })
     .filter((index) => index !== -1);
+  console.log(indexes);
 
-  for (let i = 0; i < indexes.length; i++) {}
-  return brokenArray.join(" ");
+  for (let i = 0; i < indexes.length; i++) {
+    let currentIndex = indexes[i];
+    let shiftedIndex = indexes[currentIndex - n];
+    if (shiftedIndex < 0) {
+      shiftedIndex += indexes.length; // Handle negative indices by wrapping around
+    }
+    brokenArray[currentIndex] = brokenArray[shiftedIndex];
+  }
+  return brokenArray.join("");
 }
 
 // console.log(vowelShift("This is a test!", 0));
-console.log(vowelShift("This is a test!", 1));
+console.log(vowelShift("This is a test!", 1)); //Thes is i tast!
 // console.log(vowelShift("This is a test!", 3));
