@@ -1701,3 +1701,38 @@ console.log("HELLO I AM DONALD".isUpperCase());
 // console.log(isUpperCase("hello I AM DONALD"));
 // console.log(isUpperCase("C"));
 // console.log(isUpperCase("HELLO WORLD"));
+
+function isAnagram(test, original) {
+  const testArray = [...test.toLowerCase()].sort();
+  const originalArray = [...original.toLowerCase()].sort();
+  if (testArray.length === originalArray.length) {
+    return testArray.every(
+      (element, index) => element === originalArray[index]
+    );
+  } else {
+    return false;
+  }
+}
+
+console.log(isAnagram("foefet", "toffee"));
+console.log(isAnagram("Buckethead", "DeathCubeK"));
+console.log(isAnagram("apple", "pale"));
+
+console.log(isAnagram("IkDHUKMDEFHWOwBdg", "EIDHFdkZMgDOHWUBwK"));
+
+// optimized code
+//  function isAnagram(test, original) {
+//    const cleanAndSort = (str) => str.toLowerCase().split("").sort().join("");
+//    return cleanAndSort(test) === cleanAndSort(original);
+//  }
+
+function countBy(x, n) {
+  let z = [];
+  for (let i = 1; i <= n; i++) {
+    z.push(x * i);
+  }
+  return z;
+}
+
+console.log(countBy(1, 10));
+console.log(countBy(2, 5));
