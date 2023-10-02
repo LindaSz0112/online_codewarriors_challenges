@@ -1667,3 +1667,9 @@ function isPangram(string) {
 
 console.log(isPangram("The quick brown fox jumps over the lazy dog."));
 console.log(isPangram("This is not a pangram."));
+
+// function isPangram(string) {
+//   const str = string.replace(/[^a-zA-Z]/gi, "").toLowerCase();
+//   const set = new Set([...str]);
+//   return set.size === 26;
+// }
