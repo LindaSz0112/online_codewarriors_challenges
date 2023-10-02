@@ -1626,29 +1626,44 @@ console.log(
 console.log(countSheeps([]));
 console.log(countSheeps([false]));
 
-function vowelShift(text, n) {
-  const brokenArray = text.split("");
-  const indexes = brokenArray
-    .map((char, index) => {
-      if (/[aeiouAEIOU]/.test(char)) {
-        return index;
-      }
-      return -1;
-    })
-    .filter((index) => index !== -1);
-  console.log(indexes);
+// function vowelShift(text, n) {
+//   const brokenArray = text.split("");
+//   const indexes = brokenArray
+//     .map((char, index) => {
+//       if (/[aeiouAEIOU]/.test(char)) {
+//         return index;
+//       }
+//       return -1;
+//     })
+//     .filter((index) => index !== -1);
+//   console.log(indexes);
 
-  for (let i = 0; i < indexes.length; i++) {
-    let currentIndex = indexes[i];
-    let shiftedIndex = indexes[currentIndex - n];
-    if (shiftedIndex < 0) {
-      shiftedIndex += indexes.length; // Handle negative indices by wrapping around
+//   for (let i = 0; i < indexes.length; i++) {
+//     let currentIndex = indexes[i];
+//     let shiftedIndex = indexes[currentIndex - n];
+//     if (shiftedIndex < 0) {
+//       shiftedIndex += indexes.length; // Handle negative indices by wrapping around
+//     }
+//     brokenArray[currentIndex] = brokenArray[shiftedIndex];
+//   }
+//   return brokenArray.join("");
+// }
+
+// // console.log(vowelShift("This is a test!", 0));
+// console.log(vowelShift("This is a test!", 1)); //Thes is i tast!
+// // console.log(vowelShift("This is a test!", 3));
+
+function isPangram(string) {
+  let lettersArray = string.toLowerCase().split("");
+  let setOfLetters = new Set();
+  console.log(lettersArray);
+  for (let i = 0; i < lettersArray.length; i++) {
+    if (/[a-z]/.test(lettersArray[i])) {
+      setOfLetters.add(lettersArray[i]);
     }
-    brokenArray[currentIndex] = brokenArray[shiftedIndex];
   }
-  return brokenArray.join("");
+  return setOfLetters.size === 26;
 }
 
-// console.log(vowelShift("This is a test!", 0));
-console.log(vowelShift("This is a test!", 1)); //Thes is i tast!
-// console.log(vowelShift("This is a test!", 3));
+console.log(isPangram("The quick brown fox jumps over the lazy dog."));
+console.log(isPangram("This is not a pangram."));
