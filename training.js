@@ -1673,3 +1673,31 @@ console.log(isPangram("This is not a pangram."));
 //   const set = new Set([...str]);
 //   return set.size === 26;
 // }
+
+function betterThanAverage(classPoints, yourPoints) {
+  return (
+    classPoints.reduce((acc, value) => acc + value, 0) / classPoints.length <
+    yourPoints
+  );
+}
+
+console.log(betterThanAverage([2, 3], 5));
+console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50));
+
+// const isUpperCase = (string) =>
+//   string
+//     .split("")
+//     .map((char) => char.toUpperCase())
+//     .join("") === string;
+
+String.prototype.isUpperCase = function () {
+  let testString = this.split("")
+    .map((char) => char.toUpperCase())
+    .join("");
+  return testString === this;
+};
+
+console.log("HELLO I AM DONALD".isUpperCase());
+// console.log(isUpperCase("hello I AM DONALD"));
+// console.log(isUpperCase("C"));
+// console.log(isUpperCase("HELLO WORLD"));
