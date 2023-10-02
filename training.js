@@ -1736,3 +1736,52 @@ function countBy(x, n) {
 
 console.log(countBy(1, 10));
 console.log(countBy(2, 5));
+
+// Optimized code:
+
+// function countBy(x, n) {
+//   return Array.from({ length: n }, (_, index) => x * (index + 1));
+// }
+
+function high(x) {
+  const modified = x.split("").split(" ");
+  const alphabetPos = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: 5,
+    f: 6,
+    g: 7,
+    h: 8,
+    i: 9,
+    j: 10,
+    k: 11,
+    l: 12,
+    m: 13,
+    n: 14,
+    o: 15,
+    p: 16,
+    q: 17,
+    r: 18,
+    s: 19,
+    t: 20,
+    u: 21,
+    v: 22,
+    w: 23,
+    x: 24,
+    y: 25,
+    z: 26,
+  };
+  for (let i = 0; i < modified.length; i++) {
+    const el = modified[i];
+    if (alphabetPos.hasOwnProperty(el)) {
+      modified[i] = alphabetPos[el];
+    }
+  }
+  return modified;
+}
+
+console.log(high("b aa"));
+console.log(high("what time are we climbing up the volcano"));
+console.log(high("man i need a taxi up to ubud"));
