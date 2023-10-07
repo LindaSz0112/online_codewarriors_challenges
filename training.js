@@ -134,25 +134,6 @@ const greet = (name) => `Hello, ${name} how are you doing today?`;
 
 console.log(greet("Ryan"));
 
-function sumArray(array) {
-  if (array === null) {
-    return 0;
-  } else if ((array.length === 0) | (array.length === 1)) {
-    return 0;
-  } else {
-    let lowest = Math.min(...array);
-    let highest = Math.max(...array);
-    let newArray = array.filter((num) => num !== lowest && num !== highest);
-    console.log(newArray);
-    return eval(newArray.join("+"));
-  }
-}
-
-console.log(sumArray([6, 2, 1, 8, 10]));
-console.log(sumArray(null));
-console.log(sumArray([]));
-console.log(sumArray([2]));
-
 // Math.max() and Math.min() > hghest and lowest numbers of the array
 
 let makeUpperCase = (str) => str.toUpperCase();
@@ -1743,45 +1724,62 @@ console.log(countBy(2, 5));
 //   return Array.from({ length: n }, (_, index) => x * (index + 1));
 // }
 
-function high(x) {
-  const modified = x.split("").split(" ");
-  const alphabetPos = {
-    a: 1,
-    b: 2,
-    c: 3,
-    d: 4,
-    e: 5,
-    f: 6,
-    g: 7,
-    h: 8,
-    i: 9,
-    j: 10,
-    k: 11,
-    l: 12,
-    m: 13,
-    n: 14,
-    o: 15,
-    p: 16,
-    q: 17,
-    r: 18,
-    s: 19,
-    t: 20,
-    u: 21,
-    v: 22,
-    w: 23,
-    x: 24,
-    y: 25,
-    z: 26,
-  };
-  for (let i = 0; i < modified.length; i++) {
-    const el = modified[i];
-    if (alphabetPos.hasOwnProperty(el)) {
-      modified[i] = alphabetPos[el];
-    }
+// function high(x) {
+//   const modified = x.split("").split(" ");
+//   const alphabetPos = {
+//     a: 1,
+//     b: 2,
+//     c: 3,
+//     d: 4,
+//     e: 5,
+//     f: 6,
+//     g: 7,
+//     h: 8,
+//     i: 9,
+//     j: 10,
+//     k: 11,
+//     l: 12,
+//     m: 13,
+//     n: 14,
+//     o: 15,
+//     p: 16,
+//     q: 17,
+//     r: 18,
+//     s: 19,
+//     t: 20,
+//     u: 21,
+//     v: 22,
+//     w: 23,
+//     x: 24,
+//     y: 25,
+//     z: 26,
+//   };
+//   for (let i = 0; i < modified.length; i++) {
+//     const el = modified[i];
+//     if (alphabetPos.hasOwnProperty(el)) {
+//       modified[i] = alphabetPos[el];
+//     }
+//   }
+//   return modified;
+// }
+
+// console.log(high("b aa"));
+// console.log(high("what time are we climbing up the volcano"));
+// console.log(high("man i need a taxi up to ubud"));
+
+function sumArray(array) {
+  if (array === null || array.length === 0 || array === undefined) {
+    return 0;
+  } else {
+    const sortedArray = array.sort((a, b) => a - b);
+    const last = sortedArray.pop();
+    const first = sortedArray.shift();
+    return sortedArray.reduce((acc, val) => acc + val, 0);
   }
-  return modified;
 }
 
-console.log(high("b aa"));
-console.log(high("what time are we climbing up the volcano"));
-console.log(high("man i need a taxi up to ubud"));
+console.log(sumArray([6, 2, 1, 8, 10]));
+console.log(sumArray(null));
+console.log(sumArray([]));
+console.log(sumArray([2]));
+console.log(sumArray([0, 1, 6, 10, 10]));
