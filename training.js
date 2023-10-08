@@ -1771,7 +1771,7 @@ function sumArray(array) {
   if (array === null || array.length === 0 || array === undefined) {
     return 0;
   } else {
-    const sortedArray = array.sort((a, b) => a - b);
+    const sortedArray = array.slice().sort((a, b) => a - b);
     const last = sortedArray.pop();
     const first = sortedArray.shift();
     return sortedArray.reduce((acc, val) => acc + val, 0);
@@ -1783,3 +1783,53 @@ console.log(sumArray(null));
 console.log(sumArray([]));
 console.log(sumArray([2]));
 console.log(sumArray([0, 1, 6, 10, 10]));
+
+function DNAStrand(dna) {
+  let dnaArray = dna.split("");
+  for (let i = 0; i < dnaArray.length; i++) {
+    if (dnaArray[i] === "A") {
+      dnaArray[i] = "T";
+    } else if (dnaArray[i] === "T") {
+      dnaArray[i] = "A";
+    } else if (dnaArray[i] === "G") {
+      dnaArray[i] = "C";
+    } else if (dnaArray[i] === "C") {
+      dnaArray[i] = "G";
+    }
+  }
+  return dnaArray.join("");
+}
+
+console.log(DNAStrand("GTAT"));
+console.log(DNAStrand("ATTGC"));
+console.log(DNAStrand("AAAA"));
+
+// optimized code
+
+// function DNAStrand(dna) {
+//   const replacements = {
+//     A: "T",
+//     T: "A",
+//     G: "C",
+//     C: "G",
+//   };
+
+//   return dna
+//     .split("")
+//     .map((char) => replacements[char] || char)
+//     .join("");
+// }
+
+function SeriesSum(n) {
+  let z = [];
+  for (let i = 0; i < n; i++) {
+    z.push(1 / (i * 3 + 1));
+  }
+  return z.reduce((acc, val) => acc + val, 0).toFixed(2);
+}
+
+console.log(SeriesSum(5));
+console.log(SeriesSum(4));
+console.log(SeriesSum(3));
+console.log(SeriesSum(2));
+console.log(SeriesSum(0));
