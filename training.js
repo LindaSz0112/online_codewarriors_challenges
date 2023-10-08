@@ -575,20 +575,6 @@ const uniqueInOrder = function (iterable = "array") {
 console.log(uniqueInOrder("AAAABBBCCDAABBB"));
 console.log(uniqueInOrder([1, 2, 2, 3, 3]));
 
-// function order(words) {
-//   const array = words.split(" ");
-//   let newArray = [];
-//   for (const el of array) {
-//     newArray.push(el.split(""));
-//   }
-//   console.log(newArray);
-//   for (const el of newArray) {
-//   }
-// }
-
-// console.log(order("is2 Thi1s T4est 3a"));
-// console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
-
 function drawStairs(n) {
   let stairs = `I\n`;
   let staircase = "";
@@ -1845,4 +1831,33 @@ var ball2 = new Ball("super");
 console.log(ball1.ballType); // Output: 'regular'
 console.log(ball2.ballType); // Output: 'super'
 
-// this keyword is set to the ballType property
+// creating a Ball object with the ballType property and that should be returned not the string itself
+
+// alternative solution
+
+// class Ball {
+//   constructor(ballType = "regular") {
+//     this.ballType = ballType;
+//   }
+// }
+
+function order(words) {
+  const array = words.split(" ");
+  let newArray = [];
+  for (const el of array) {
+    newArray.push(el.split(""));
+  }
+
+  console.log(newArray);
+}
+
+console.log(order("is2 Thi1s T4est 3a"));
+console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
+
+// Loop through the newArray and extract the number from each word. You can use the parseInt function to convert the number from a string to an actual number.
+
+// Create a new array that stores objects with two properties: the extracted number and the original word.
+
+// Sort this array of objects based on the extracted numbers in ascending order.
+
+// Extract the words from the sorted array of objects and join them into a single string with spaces in between.
