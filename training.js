@@ -1665,24 +1665,6 @@ function betterThanAverage(classPoints, yourPoints) {
 console.log(betterThanAverage([2, 3], 5));
 console.log(betterThanAverage([41, 75, 72, 56, 80, 82, 81, 33], 50));
 
-// const isUpperCase = (string) =>
-//   string
-//     .split("")
-//     .map((char) => char.toUpperCase())
-//     .join("") === string;
-
-String.prototype.isUpperCase = function () {
-  let testString = this.split("")
-    .map((char) => char.toUpperCase())
-    .join("");
-  return testString === this;
-};
-
-console.log("HELLO I AM DONALD".isUpperCase());
-// console.log(isUpperCase("hello I AM DONALD"));
-// console.log(isUpperCase("C"));
-// console.log(isUpperCase("HELLO WORLD"));
-
 function isAnagram(test, original) {
   const testArray = [...test.toLowerCase()].sort();
   const originalArray = [...original.toLowerCase()].sort();
@@ -1833,3 +1815,34 @@ console.log(SeriesSum(4));
 console.log(SeriesSum(3));
 console.log(SeriesSum(2));
 console.log(SeriesSum(0));
+
+// const isUpperCase = (string) =>
+//   string
+//     .split("")
+//     .map((char) => char.toUpperCase())
+//     .join("") === string;
+
+String.prototype.isUpperCase = function () {
+  let testString = this.split("")
+    .map((char) => char.toUpperCase())
+    .join("");
+  return testString === this;
+};
+
+console.log("HELLO I AM DONALD".isUpperCase());
+console.log("C".isUpperCase());
+// console.log(isUpperCase("hello I AM DONALD"));
+// console.log(isUpperCase("C"));
+// console.log(isUpperCase("HELLO WORLD"));
+
+const Ball = function (ballType) {
+  this.ballType = ballType || "regular";
+};
+
+var ball1 = new Ball(undefined);
+var ball2 = new Ball("super");
+
+console.log(ball1.ballType); // Output: 'regular'
+console.log(ball2.ballType); // Output: 'super'
+
+// this keyword is set to the ballType property
