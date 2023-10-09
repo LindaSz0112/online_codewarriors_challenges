@@ -1845,19 +1845,20 @@ function order(words) {
   const array = words.split(" ");
   let newArray = [];
   for (const el of array) {
-    newArray.push(el.split(""));
+    const match = el.match(/\d+/);
+    // Extract the number from the word
+    // /d expression pattern that matches any digit character
+    // + match one or more of the precending order
+    const num = match ? parseInt(match[0]) : 0;
+
+    newArray.push({ num, el });
   }
 
-  console.log(newArray);
+  return newArray
+    .sort((a, b) => a.num - b.num)
+    .map((obj) => obj.el)
+    .join(" ");
 }
 
 console.log(order("is2 Thi1s T4est 3a"));
 console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
-
-// Loop through the newArray and extract the number from each word. You can use the parseInt function to convert the number from a string to an actual number.
-
-// Create a new array that stores objects with two properties: the extracted number and the original word.
-
-// Sort this array of objects based on the extracted numbers in ascending order.
-
-// Extract the words from the sorted array of objects and join them into a single string with spaces in between.
