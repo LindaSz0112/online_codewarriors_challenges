@@ -1876,3 +1876,38 @@ function pipeFix(numbers) {
 console.log(pipeFix([-1, 4]));
 console.log(pipeFix([6, 9]));
 console.log(pipeFix([1, 2, 3, 5, 6, 8, 9]));
+
+function oddOrEven(array) {
+  return array.reduce((acc, value) => acc + value, 0) % 2 === 0
+    ? "even"
+    : "odd";
+}
+
+console.log(oddOrEven([-1023, -1, 3]));
+console.log(oddOrEven([1023, 1, 3]));
+console.log(oddOrEven([]));
+console.log(oddOrEven([0]));
+
+const roundToNext5 = function (n) {
+  if (n >= 0) {
+    return n % 5 === 0 ? n : n + (5 - (n % 5));
+  } else {
+    return n % 5 === -0 ? n : n - (n % 5);
+  }
+};
+
+console.log(roundToNext5(0));
+console.log(roundToNext5(2));
+console.log(roundToNext5(12));
+console.log(roundToNext5(21));
+console.log(roundToNext5(5));
+console.log(roundToNext5(-1));
+console.log(roundToNext5(-5));
+console.log(roundToNext5(-2));
+console.log(roundToNext5(-7));
+
+// optimized code
+
+// const roundToNext5 = function (n) {
+//   return Math.ceil(n / 5) * 5;
+// };
