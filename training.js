@@ -1862,3 +1862,17 @@ function order(words) {
 
 console.log(order("is2 Thi1s T4est 3a"));
 console.log(order("4of Fo1r pe6ople g3ood th5e the2"));
+
+function pipeFix(numbers) {
+  let firstElement = numbers[0];
+  let lastElement = numbers.pop();
+  let emptyArray = [];
+  for (let i = firstElement; i <= lastElement; i++) {
+    emptyArray.push(i);
+  }
+  return emptyArray;
+}
+
+console.log(pipeFix([-1, 4]));
+console.log(pipeFix([6, 9]));
+console.log(pipeFix([1, 2, 3, 5, 6, 8, 9]));
