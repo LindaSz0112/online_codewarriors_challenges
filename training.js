@@ -1911,3 +1911,21 @@ console.log(roundToNext5(-7));
 // const roundToNext5 = function (n) {
 //   return Math.ceil(n / 5) * 5;
 // };
+
+function remove(string) {
+  let modifiedStrings = string.split("");
+  return modifiedStrings[modifiedStrings.length - 1] === "!"
+    ? modifiedStrings.slice(0, modifiedStrings.length - 1).join("")
+    : string;
+}
+
+console.log(remove("Hi!!"));
+console.log(remove("Hi!"));
+console.log(remove("!Hi"));
+console.log(remove("Hi"));
+
+const otherAngle = (a, b) => 180 - (a + b);
+
+console.log(otherAngle(30, 60));
+console.log(otherAngle(60, 60));
+console.log(otherAngle(43, 60));
