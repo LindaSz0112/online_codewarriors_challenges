@@ -1935,3 +1935,52 @@ const century = (year) =>
 
 console.log(century(1705));
 console.log(century(2000));
+
+// function toDayOfYear(arr) {
+//   const monthsDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+//   const month = arr[1];
+//   const cutMonthsDays = monthsDays.slice(0, month - 1);
+//   const days = cutMonthsDays.reduce((acc, val) => acc + val, 0) + arr[0];
+//   if (arr[2] % 4 !== 0) {
+//     return days;
+//   } else if (arr[2] % 4 === 0 && month >= 3) {
+//     return days + 1;
+//   } else return days;
+// }
+
+console.log(toDayOfYear([31, 12, 2001]));
+console.log(toDayOfYear([31, 10, 1991]));
+console.log(toDayOfYear([14, 3, 1066]));
+console.log(toDayOfYear([5, 11, 1604]));
+console.log(toDayOfYear([5, 11, 1604]));
+
+function toDayOfYear(arr) {
+  const monthsDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  const day = arr[0];
+  const month = arr[1];
+  const year = arr[2];
+
+  const cutMonthsDays = monthsDays.slice(0, month - 1);
+
+  const days = cutMonthsDays.reduce((acc, val) => acc + val, 0) + day;
+
+  if (year % 4 !== 0) {
+    return days;
+  } else if (year % 4 === 0 && year % 400 === 0 && month >= 3) {
+    return days + 1;
+  } else if (year % 100 === 0 && year % 400 !== 0) {
+    return days;
+  } else if (year % 4 === 0 && year % 100 !== 0 && month >= 3) {
+    return days + 1;
+  } else {
+    return days;
+  }
+}
+
+console.log(toDayOfYear([31, 12, 2000]));
+console.log(toDayOfYear([31, 10, 1991]));
+console.log(toDayOfYear([14, 3, 1066]));
+console.log(toDayOfYear([1, 5, 1604]));
+console.log(toDayOfYear([5, 11, 1604]));
