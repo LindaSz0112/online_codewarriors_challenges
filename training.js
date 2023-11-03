@@ -1949,11 +1949,6 @@ console.log(century(2000));
 //   } else return days;
 // }
 
-console.log(toDayOfYear([31, 12, 2001]));
-console.log(toDayOfYear([31, 10, 1991]));
-console.log(toDayOfYear([14, 3, 1066]));
-console.log(toDayOfYear([5, 11, 1604]));
-console.log(toDayOfYear([5, 11, 1604]));
 
 function toDayOfYear(arr) {
   const monthsDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
