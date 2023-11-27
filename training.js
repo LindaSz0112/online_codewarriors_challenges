@@ -2078,3 +2078,24 @@ function minMax(arr) {
 console.log(minMax([5]));
 console.log(minMax([2334454, 5]));
 console.log(minMax([1, 2, 3, 4, 5]));
+
+function gooseFilter(birds) {
+  let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  return birds.filter((el) => !geese.includes(el));
+}
+
+console.log(
+  gooseFilter([
+    "Mallard",
+    "Hook Bill",
+    "African",
+    "Crested",
+    "Pilgrim",
+    "Toulouse",
+    "Blue Swedish",
+  ])
+);
+
+console.log(
+  gooseFilter(["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"])
+);
