@@ -2049,3 +2049,15 @@ console.log(getDivisorsCnt(1)); //1
 console.log(getDivisorsCnt(10)); //4
 console.log(getDivisorsCnt(11)); //2
 console.log(getDivisorsCnt(54)); //8
+
+function getMiddle(s) {
+  let arr = s.split("");
+  let arrNumber = arr.length % 2;
+  return arrNumber === 0
+    ? [...[arr[arr.length / 2 - 1], arr[arr.length / 2]]].join("")
+    : arr[Math.floor(arr.length / 2)];
+}
+
+console.log(getMiddle("test"));
+console.log(getMiddle("testing"));
+console.log(getMiddle("middle"));
