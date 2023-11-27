@@ -1995,3 +1995,19 @@ console.log(peopleWithAgeDrink(22));
 console.log(peopleWithAgeDrink(5));
 console.log(peopleWithAgeDrink(19));
 console.log(peopleWithAgeDrink(17));
+
+const litres = (time) => Math.floor(time * 0.5);
+
+console.log(litres(2)); //1
+console.log(litres(12.3)); //6
+console.log(litres(11.8)); //5
+
+function arithmetic(a, b, operator) {
+  if (operator === "add") return a + b;
+  if (operator === "subtract") return a - b;
+  if (operator === "multiply") return a * b;
+  if (operator === "divide") return a / b;
+}
+console.log(arithmetic(5, 2, "multiply"));
+console.log(arithmetic(8, 2, "subtract"));
+console.log(arithmetic(1, 2, "add"));
