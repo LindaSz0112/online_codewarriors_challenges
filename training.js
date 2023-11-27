@@ -2061,3 +2061,12 @@ function getMiddle(s) {
 console.log(getMiddle("test"));
 console.log(getMiddle("testing"));
 console.log(getMiddle("middle"));
+
+// alternative solution
+
+// function getMiddle(s) {
+//   var middle = s.length / 2;
+//   return s.length % 2
+//     ? s.charAt(Math.floor(middle))
+//     : s.slice(middle - 1, middle + 1);
+// }
