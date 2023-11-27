@@ -1949,7 +1949,6 @@ console.log(century(2000));
 //   } else return days;
 // }
 
-
 function toDayOfYear(arr) {
   const monthsDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -1979,3 +1978,20 @@ console.log(toDayOfYear([31, 10, 1991]));
 console.log(toDayOfYear([14, 3, 1066]));
 console.log(toDayOfYear([1, 5, 1604]));
 console.log(toDayOfYear([5, 11, 1604]));
+
+function peopleWithAgeDrink(old) {
+  return `drink ${
+    old < 14
+      ? "toddy"
+      : old > 14 && old < 18
+      ? "coke"
+      : old > 17 && old < 21
+      ? "beer"
+      : "whisky"
+  }`;
+}
+
+console.log(peopleWithAgeDrink(22));
+console.log(peopleWithAgeDrink(5));
+console.log(peopleWithAgeDrink(19));
+console.log(peopleWithAgeDrink(17));
