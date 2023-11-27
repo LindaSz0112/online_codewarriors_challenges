@@ -2011,3 +2011,26 @@ function arithmetic(a, b, operator) {
 console.log(arithmetic(5, 2, "multiply"));
 console.log(arithmetic(8, 2, "subtract"));
 console.log(arithmetic(1, 2, "add"));
+
+const countSheep = function (num) {
+  let murmur = [];
+  for (let i = 1; i <= num; i++) {
+    let string = `${i} sheep...`;
+    murmur.push(string);
+  }
+  return murmur.join("");
+};
+
+console.log(countSheep(0));
+console.log(countSheep(1));
+console.log(countSheep(3));
+
+// alternative solution
+
+// var countSheep = function (num) {
+//   let str = "";
+//   for (let i = 1; i <= num; i++) {
+//     str += `${i} sheep...`;
+//   }
+//   return str;
+// };
