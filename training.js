@@ -2070,3 +2070,11 @@ console.log(getMiddle("middle"));
 //     ? s.charAt(Math.floor(middle))
 //     : s.slice(middle - 1, middle + 1);
 // }
+
+function minMax(arr) {
+  return [Math.min(...arr), Math.max(...arr)];
+}
+
+console.log(minMax([5]));
+console.log(minMax([2334454, 5]));
+console.log(minMax([1, 2, 3, 4, 5]));
