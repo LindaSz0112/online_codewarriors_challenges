@@ -2079,23 +2079,107 @@ console.log(minMax([5]));
 console.log(minMax([2334454, 5]));
 console.log(minMax([1, 2, 3, 4, 5]));
 
-function gooseFilter(birds) {
-  let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
-  return birds.filter((el) => !geese.includes(el));
+// function gooseFilter(birds) {
+//   let geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+//   return birds.filter((el) => !geese.includes(el));
+// }
+
+// console.log(
+//   gooseFilter([
+//     "Mallard",
+//     "Hook Bill",
+//     "African",
+//     "Crested",
+//     "Pilgrim",
+//     "Toulouse",
+//     "Blue Swedish",
+//   ])
+// );
+
+// console.log(
+//   gooseFilter(["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"])
+// );
+
+// // for (let i = 10; i > 0; i++) {
+// //   console.log(i);
+// // }
+
+// const animal = "cat";
+
+// // for (let i = 0; i < animal.length; i++) {
+// //   console.log(animal[i]);
+// //   for (let j = 1; j < 4; j++) {
+// //     console.log(j);
+// //   }
+// // }
+
+// // Write your code below
+// const bobsFollowers = ["Clara", "Marta", "Roberto", "Linda"];
+
+// const tinasFollowers = ["Linda", "Marta", "Auri"];
+
+// const mutualFollowers = [];
+
+// for (let i = 0; i < bobsFollowers.length; i++) {
+//   for (let j = 0; i < tinasFollowers.length; j++) {
+//     if (bobsFollowers[i] === tinasFollowers[j]) {
+//       mutualFollowers.push(bobsFollowers[i]);
+//     }
+//   }
+//   console.log(mutualFollowers);
+// }
+
+function nthChar(words) {
+  let element = "";
+  for (let i = 0; i < words.length; i++) {
+    element += words[i].charAt(i);
+  }
+  return element;
 }
 
-console.log(
-  gooseFilter([
-    "Mallard",
-    "Hook Bill",
-    "African",
-    "Crested",
-    "Pilgrim",
-    "Toulouse",
-    "Blue Swedish",
-  ])
-);
+console.log(nthChar([]));
+console.log(nthChar(["yoda", "best", "has"]));
 
-console.log(
-  gooseFilter(["Mallard", "Barbary", "Hook Bill", "Blue Swedish", "Crested"])
-);
+function factorial(n) {
+  // if (n === 0) {
+  //   return 1;
+  // }
+  if (n < 0) {
+    return console.log("RangeError");
+  } else {
+    let factorial = 1;
+    for (let i = 1; i <= n; i++) {
+      factorial *= i;
+    }
+    return factorial;
+  }
+}
+
+console.log(factorial(0));
+console.log(factorial(1));
+console.log(factorial(3));
+
+function lowestProduct(input) {
+  if (input.length < 4) {
+    return "Number is too small";
+  } else {
+    let array = input.split("").map((el) => Number(el));
+    let emptyArray = [];
+    for (let i = 0; i < array.length - 3; i++) {
+      let product = array[i] * array[i + 1] * array[i + 2] * array[i + 3];
+      emptyArray.push(product);
+    }
+
+    let minProduct = Math.min(...emptyArray);
+
+    if (minProduct !== array[0] * array[1] * array[2] * array[3]) {
+      return [minProduct, "Numbers should be consecutive"];
+    }
+    return minProduct;
+  }
+}
+
+console.log(lowestProduct("123456789"));
+console.log(lowestProduct("333"));
+console.log(lowestProduct("234567899"));
+console.log(lowestProduct("1234111"));
