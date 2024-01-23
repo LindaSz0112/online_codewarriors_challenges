@@ -2172,9 +2172,6 @@ function lowestProduct(input) {
 
     let minProduct = Math.min(...emptyArray);
 
-    if (minProduct !== array[0] * array[1] * array[2] * array[3]) {
-      return [minProduct, "Numbers should be consecutive"];
-    }
     return minProduct;
   }
 }
@@ -2183,3 +2180,8 @@ console.log(lowestProduct("123456789"));
 console.log(lowestProduct("333"));
 console.log(lowestProduct("234567899"));
 console.log(lowestProduct("1234111"));
+
+const isTriangle = (a, b, c) => a + b > c && b + c > a && a + c > b;
+
+console.log(isTriangle(1, 2, 2));
+console.log(isTriangle(7, 2, 2));
