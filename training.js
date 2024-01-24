@@ -2225,3 +2225,17 @@ function wallpaper(l, w, h) {
 console.log(wallpaper(6.3, 5.8, 3.13));
 console.log(wallpaper(7.8, 2.9, 3.29));
 console.log(wallpaper(6.3, 4.5, 3.29));
+
+function solution(nums) {
+  if (nums === null) {
+    return [];
+  }
+  const numsCopy = nums.slice();
+  const test = numsCopy.sort((a, b) => a - b);
+  return test;
+}
+
+console.log(solution([1, 2, 3, 10, 5]));
+console.log(solution(null));
+console.log(solution([]));
+console.log(solution([20, 2, 10]));
