@@ -2185,3 +2185,43 @@ const isTriangle = (a, b, c) => a + b > c && b + c > a && a + c > b;
 
 console.log(isTriangle(1, 2, 2));
 console.log(isTriangle(7, 2, 2));
+
+function wallpaper(l, w, h) {
+  if (l === 0 || w === 0 || h === 0) {
+    return "zero";
+  }
+  const test1 = l / 0.52;
+  const test2 = w / 0.52;
+  const test3 = h / 10;
+  const surfaceArea = Math.ceil((test1 * test3 * 2 + test2 * test3 * 2) * 1.15);
+
+  const numbers = [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+    "fifteen",
+    "sixteen",
+    "seventeen",
+    "eighteen",
+    "nineteen",
+    "twenty",
+  ];
+
+  return numbers[surfaceArea];
+}
+
+console.log(wallpaper(6.3, 5.8, 3.13));
+console.log(wallpaper(7.8, 2.9, 3.29));
+console.log(wallpaper(6.3, 4.5, 3.29));
