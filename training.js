@@ -2226,16 +2226,32 @@ console.log(wallpaper(6.3, 5.8, 3.13));
 console.log(wallpaper(7.8, 2.9, 3.29));
 console.log(wallpaper(6.3, 4.5, 3.29));
 
-function solution(nums) {
-  if (nums === null) {
-    return [];
+// function solution(nums) {
+//   if (nums === null) {
+//     return [];
+//   }
+//   const numsCopy = nums.slice();
+//   const test = numsCopy.sort((a, b) => a - b);
+//   return test;
+// }
+
+// console.log(solution([1, 2, 3, 10, 5]));
+// console.log(solution(null));
+// console.log(solution([]));
+// console.log(solution([20, 2, 10]));
+
+function validatePIN(pin) {
+  if (pin.length === 4 || pin.length === 6) {
+    const numbers = pin.split("").filter((el) => !isNaN(Number(el)));
+    return pin.length === numbers.length;
+  } else {
+    return false;
   }
-  const numsCopy = nums.slice();
-  const test = numsCopy.sort((a, b) => a - b);
-  return test;
 }
 
-console.log(solution([1, 2, 3, 10, 5]));
-console.log(solution(null));
-console.log(solution([]));
-console.log(solution([20, 2, 10]));
+console.log(validatePIN("12345"));
+console.log(validatePIN("123456"));
+console.log(validatePIN("1234 "));
+console.log(validatePIN(".204"));
+console.log(validatePIN("11"));
+console.log(validatePIN("000000"));
