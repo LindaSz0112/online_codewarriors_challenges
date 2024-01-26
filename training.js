@@ -2255,3 +2255,21 @@ console.log(validatePIN("1234 "));
 console.log(validatePIN(".204"));
 console.log(validatePIN("11"));
 console.log(validatePIN("000000"));
+
+function strCount(str, letter) {
+  return str.split("").filter((el) => el === letter).length;
+}
+
+console.log(strCount("Hello", "o"));
+console.log(strCount("Hello", "l"));
+console.log(strCount("", "z"));
+
+var laLigaGoals = 43;
+var championsLeagueGoals = 10;
+var copaDelReyGoals = 5;
+
+var totalGoals = () => {
+  return laLigaGoals + championsLeagueGoals + copaDelReyGoals;
+};
+
+console.log(totalGoals());
