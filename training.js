@@ -2423,19 +2423,33 @@ console.log(gHappy("gg0gg3gg0gg"));
 console.log(gHappy("ggg ggg g ggg"));
 console.log(gHappy("good grief"));
 
-function scratch(lottery) {
-  const isWinningLottery = /\b(\w+)\s\1\b/;
-  for (let i = 0; i < lottery.length; i++)
-    console.log(lottery[i].match(isWinningLottery));
+// function scratch(lottery) {
+//   const isWinningLottery = /\b(\w+)\s\1\b/;
+//   for (let i = 0; i < lottery.length; i++)
+//     console.log(lottery[i].match(isWinningLottery));
+// }
+
+// console.log(
+//   scratch([
+//     "tiger tiger tiger 100",
+//     "rabbit dragon snake 100",
+//     "rat ox pig 1000",
+//     "dog cock sheep 10",
+//     "horse monkey rat 5",
+//     "dog dog dog 1000",
+//   ])
+// );
+
+function isItANum(str) {
+  const phoneRegex = /\d+/g;
+  const possiblePhoneNumber = str.match(phoneRegex).join("");
+
+  return possiblePhoneNumber.length === 11 && possiblePhoneNumber[0] === "0"
+    ? possiblePhoneNumber
+    : "Not a phone number";
 }
 
-console.log(
-  scratch([
-    "tiger tiger tiger 100",
-    "rabbit dragon snake 100",
-    "rat ox pig 1000",
-    "dog cock sheep 10",
-    "horse monkey rat 5",
-    "dog dog dog 1000",
-  ])
-);
+console.log(isItANum("S:)0207ERGQREG88349F82!efRF)"));
+console.log(isItANum("sjfniebienvr12312312312ehfWh"));
+console.log(isItANum("v   uf  f 0tt2eg qe0b 8rtyq4eyq564()(((((165"));
+console.log(isItANum("stop calling me no I have never been in an accident"));
