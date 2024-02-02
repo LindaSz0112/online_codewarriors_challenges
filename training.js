@@ -2273,3 +2273,169 @@ var totalGoals = () => {
 };
 
 console.log(totalGoals());
+
+let crowd = "P1P2P3P4P5P6CCCP7P8P9";
+let reCriminals = /C+/g;
+
+console.log(crowd.match(reCriminals));
+
+let hello = "  Hello World! ";
+let wsRegex = /^\s+|\s+$/g;
+let result = hello.replace(wsRegex, "");
+console.log(result);
+
+function vowel2index(str) {
+  const vowels = /[aeiou]/i;
+  let strElements = str.split("");
+  for (let i = 0; i < strElements.length; i++) {
+    if (vowels.test(strElements[i])) {
+      strElements[i] = i + 1;
+    }
+  }
+  return strElements.join("");
+}
+
+console.log(vowel2index("this is my string"));
+console.log(vowel2index("Tomorrow is going to be raining"));
+console.log(vowel2index("Codewars is the best site in the world"));
+
+function domainName(url) {
+  const domainRegex =
+    /^(https?:\/\/)?(www\.)?([a-zA-Z0-9-]+)\.([a-zA-Z]{2,})(\/.*)?$/;
+  const match = url.match(domainRegex);
+  const domain = match ? match[3] : null;
+
+  return domain;
+}
+
+console.log(domainName("https://youtube.com"));
+console.log(domainName("www.xakep.ru"));
+console.log(domainName("http://google.com"));
+
+function nothingSpecial(str) {
+  if (typeof str === "number") return "Not a string!";
+  const cleanRegex = /[a-zA-Z0-9\s]/g;
+  const matches = str.match(cleanRegex);
+  return matches.join("");
+}
+
+console.log(nothingSpecial("Hello World!"));
+console.log(nothingSpecial("%^Take le$ft ##quad%r&a&nt"));
+console.log(nothingSpecial("M$$$$$$$y ally!!!!!"));
+console.log(nothingSpecial(25));
+
+function getNumberFromString(s) {
+  const numberRegex = /\d+/g;
+  return Number(s.match(numberRegex).join(""));
+}
+
+console.log(getNumberFromString("1"));
+console.log(getNumberFromString("125"));
+console.log(getNumberFromString("Here is a number: 7"));
+console.log(getNumberFromString("hell5o wor6ld"));
+
+function validateUsr(username) {
+  const res = /[a-z0-9_]{4,16}/g;
+  return res.test(username);
+}
+
+console.log(validateUsr("a"));
+console.log(validateUsr("1234567890abcdefg"));
+console.log(validateUsr("____"));
+console.log(validateUsr(""));
+console.log(validateUsr("hass"));
+
+function digit(s) {
+  const regexDigit = /^\d$/;
+  return regexDigit.test(s);
+}
+
+console.log(digit(""));
+console.log(digit("7"));
+console.log(digit("a5"));
+
+function stringClean(s) {
+  const cleaningRegex = /\D/g;
+  const match = s.match(cleaningRegex);
+  if (match === null) {
+    return "";
+  } else {
+    return match.join("");
+  }
+}
+
+console.log(stringClean("Dsa32 cdsc34232 csa!!! 1I 4Am cool!"));
+console.log(stringClean("(E3at m2e2!!)"));
+console.log(stringClean("123456789"));
+
+function lowercaseCount(str) {
+  const lowerCaseRegex = /[a-z]/g;
+  const match = str.match(lowerCaseRegex);
+  if (match === null) {
+    return 0;
+  } else {
+    return match.length;
+  }
+}
+
+console.log(lowercaseCount("abcABC123!@€£#$%^&*()_-+=}{[]|':;?/>.<,~"));
+console.log(lowercaseCount("abc"));
+console.log(lowercaseCount("abcABC123"));
+console.log(lowercaseCount(""));
+console.log(lowercaseCount("ABC123!@€£#$%^&*()_-+=}{[]|':;?/>.<,~"));
+
+function validateCode(code) {
+  return /^[1-3]/.test(code);
+}
+
+console.log(validateCode(123));
+console.log(validateCode(248));
+console.log(validateCode(8));
+console.log(validateCode(652934));
+
+function validateTime(time) {
+  const timeRegex = /^(0[0-9]|1[0,1]|[0-9])\:[0-5][0-9]/;
+  return timeRegex.test(time);
+}
+
+console.log(validateTime("01:00"));
+console.log(validateTime("1:00"));
+console.log(validateTime("14:32"));
+console.log(validateTime("foo12:00bar"));
+console.log(validateTime("010:00"));
+
+function htmlTags(str) {
+  const regex = /<[^>]*>/g;
+  return str.replace(regex, "");
+}
+
+console.log(htmlTags("<a href='#'>go to <b>start</b> page</a>"));
+console.log(htmlTags("aaabbb<i>sss</i>zzz<hr/>vvv<hr /><br/>"));
+console.log(htmlTags("<img src='home.jpg'/>foto description"));
+
+function gHappy(str) {
+  const unhappyGRegex = /(?<!g)g(?!g)/;
+  return !unhappyGRegex.test(str);
+}
+
+console.log(gHappy("gog"));
+console.log(gHappy("gg0gg3gg0gg"));
+console.log(gHappy("ggg ggg g ggg"));
+console.log(gHappy("good grief"));
+
+function scratch(lottery) {
+  const isWinningLottery = /\b(\w+)\s\1\b/;
+  for (let i = 0; i < lottery.length; i++)
+    console.log(lottery[i].match(isWinningLottery));
+}
+
+console.log(
+  scratch([
+    "tiger tiger tiger 100",
+    "rabbit dragon snake 100",
+    "rat ox pig 1000",
+    "dog cock sheep 10",
+    "horse monkey rat 5",
+    "dog dog dog 1000",
+  ])
+);
