@@ -2440,16 +2440,53 @@ console.log(gHappy("good grief"));
 //   ])
 // );
 
-function isItANum(str) {
-  const phoneRegex = /\d+/g;
-  const possiblePhoneNumber = str.match(phoneRegex).join("");
+// function isItANum(str) {
+//   const phoneRegex = /\d+/g;
+//   const possiblePhoneNumber = str.match(phoneRegex).join("");
 
-  return possiblePhoneNumber.length === 11 && possiblePhoneNumber[0] === "0"
-    ? possiblePhoneNumber
-    : "Not a phone number";
+//   return possiblePhoneNumber.length === 11 && possiblePhoneNumber[0] === "0"
+//     ? possiblePhoneNumber
+//     : "Not a phone number";
+// }
+
+// console.log(isItANum("S:)0207ERGQREG88349F82!efRF)"));
+// console.log(isItANum("sjfniebienvr12312312312ehfWh"));
+// console.log(isItANum("v   uf  f 0tt2eg qe0b 8rtyq4eyq564()(((((165"));
+// console.log(isItANum("stop calling me no I have never been in an accident"));
+
+function oddOnesOut(nums) {
+  let newArray = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    const currentElement = nums[i];
+
+    if (newArray[currentElement]) {
+      newArray[currentElement]++;
+    } else {
+      newArray[currentElement] = 1;
+    }
+  }
+  console.log(newArray);
+  // Step 2: Filter out elements with odd occurrences
+  const resultArray = nums.filter((element) => newArray[element] % 2 === 0);
+
+  return resultArray;
 }
 
-console.log(isItANum("S:)0207ERGQREG88349F82!efRF)"));
-console.log(isItANum("sjfniebienvr12312312312ehfWh"));
-console.log(isItANum("v   uf  f 0tt2eg qe0b 8rtyq4eyq564()(((((165"));
-console.log(isItANum("stop calling me no I have never been in an accident"));
+console.log(oddOnesOut([1, 2, 3, 1, 3, 3]));
+console.log(
+  oddOnesOut([82, 86, 71, 58, 44, 79, 50, 44, 79, 67, 82, 82, 55, 50])
+);
+console.log(oddOnesOut([100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100]));
+console.log(oddOnesOut([75, 68, 75, 47, 68]));
+
+const cubeChecker = (volume, side) => {
+  if (volume <= 0 || side <= 0) {
+    return false;
+  }
+  return side ** 3 === volume;
+};
+
+console.log(cubeChecker(125, 5));
+console.log(cubeChecker(8, 2));
+console.log(cubeChecker(8, 3));
