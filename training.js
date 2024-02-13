@@ -2490,3 +2490,64 @@ const cubeChecker = (volume, side) => {
 console.log(cubeChecker(125, 5));
 console.log(cubeChecker(8, 2));
 console.log(cubeChecker(8, 3));
+
+function distinct(a) {
+  return [...new Set(a)];
+}
+
+console.log(distinct([1, 1, 2]));
+console.log(distinct([1]));
+
+function smallEnough(a, limit) {
+  let array = [];
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] <= limit) {
+      array.push(a[i]);
+    }
+  }
+  return array.length === a.length;
+}
+
+console.log(smallEnough([101, 45, 75, 105, 99, 107], 107));
+console.log(smallEnough([78, 117, 110, 99, 104, 117, 107, 115], 100));
+console.log(smallEnough([66, 101], 200));
+
+function twoSort(s) {
+  return s
+    .sort()
+    .shift()
+    .split("")
+    .map((el) => (el = el + "***"))
+    .join("")
+    .slice(0, -3);
+}
+
+console.log(
+  twoSort([
+    "bitcoin",
+    "take",
+    "over",
+    "the",
+    "world",
+    "maybe",
+    "who",
+    "knows",
+    "perhaps",
+  ])
+);
+console.log(
+  twoSort([
+    "turns",
+    "out",
+    "random",
+    "test",
+    "cases",
+    "are",
+    "easier",
+    "than",
+    "writing",
+    "out",
+    "basic",
+    "ones",
+  ])
+);
