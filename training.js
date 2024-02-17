@@ -2551,3 +2551,21 @@ console.log(
     "ones",
   ])
 );
+
+function rounders(value) {
+  let valueArray = `${value}`.split("").map((el) => Number(el));
+  for (let i = valueArray.length - 1; i >= 1; i--) {
+    if (valueArray[i] >= 5) {
+      valueArray[i] = 0;
+      valueArray[i - 1] = valueArray[i - 1] + 1;
+    } else if (valueArray[i] < 5) {
+      valueArray[i] = 0;
+    }
+  }
+  return Number(valueArray.join(""));
+}
+
+console.log(rounders(1445));
+console.log(rounders(1245));
+console.log(rounders(14));
+console.log(rounders(15));
