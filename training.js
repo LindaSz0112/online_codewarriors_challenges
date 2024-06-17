@@ -2569,3 +2569,129 @@ console.log(rounders(1445));
 console.log(rounders(1245));
 console.log(rounders(14));
 console.log(rounders(15));
+
+function highAndLow(numbers) {
+  let arrayOfNumbers = numbers.split(" ").map((el) => Number(el));
+  console.log(arrayOfNumbers);
+  let theSmallestNumber = arrayOfNumbers[0];
+  let theLargestNumber = arrayOfNumbers[0];
+  for (let i = 0; i <= arrayOfNumbers.length; i++) {
+    if (arrayOfNumbers[i] < theSmallestNumber) {
+      theSmallestNumber = arrayOfNumbers[i];
+    } else if (theLargestNumber < arrayOfNumbers[i]) {
+      theLargestNumber = arrayOfNumbers[i];
+    }
+  }
+  return `${theLargestNumber} ${theSmallestNumber}`;
+}
+
+console.log(highAndLow("1 2 3"));
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"));
+
+function checkExam(array1, array2) {
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] === array2[i]) {
+      array1[i] = 4;
+    } else if (array1[i] === "" || array2[i] === "") {
+      array1[i] = 0;
+    } else if (array1[i] !== array2[i]) {
+      array1[i] = -1;
+    }
+  }
+  const sum = array1.reduce((a, acc) => a + acc, 0);
+  return sum > 0 ? sum : 0;
+}
+
+console.log(checkExam(["b", "c", "b", "a"], ["", "a", "a", "c"])); //0
+console.log(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"])); //16
+console.log(checkExam(["a", "a", "c", ""], ["a", "a", "b", "b"])); //7
+
+function sentence(arrayOfObjects) {
+  let rearrangedArray = arrayOfObjects.sort((a, b) => {
+    let keyA = Object.keys(a)[0];
+    let keyB = Object.keys(b)[0];
+    return keyA - keyB;
+  });
+  return rearrangedArray.map((el) => Object.values(el)).join(" ");
+}
+
+console.log(
+  sentence([
+    { 1: "dog" },
+    { 2: "took" },
+    { 4: "Vatsan" },
+    { 5: "for" },
+    { 6: "a" },
+    { 12: "spin" },
+  ])
+);
+console.log(
+  sentence([
+    { 3: "Jake." },
+    { 5: "Chinatown" },
+    { 1: "Forget" },
+    { 4: "It is" },
+    { 2: "it" },
+  ])
+);
+
+function reverseString(string) {
+  return string.split("").reverse().join("");
+}
+
+console.log(reverseString("Bicho is the best"));
+
+function sumTwoSmallestNumbers(numbers) {
+  const sortedArray = numbers.sort((a, b) => a - b);
+  return sortedArray[0] + sortedArray[1];
+}
+
+console.log(sumTwoSmallestNumbers([5, 8, 12, 19, 22]));
+console.log(sumTwoSmallestNumbers([3, 87, 45, 12, 7]));
+console.log(sumTwoSmallestNumbers([15, 28, 4, 2, 43]));
+
+function findInteger(array) {
+  const cleanedUpSet = new Set(array);
+  const sortedArray = [...cleanedUpSet].sort((a, b) => a - b);
+  for (let i = 0; i < sortedArray.length; i++) {
+    if (sortedArray[i] + 1 !== sortedArray[i + 1]) {
+      return sortedArray[i] + 1 > 0 ? sortedArray[i] + 1 : 1;
+    }
+  }
+}
+
+console.log(findInteger([3, 4, 1, 1, 2, 6]));
+console.log(findInteger([-2, -1]));
+console.log(findInteger([1, 2, 3]));
+console.log(findInteger([2]));
+
+// function testit(a, b) {
+//   return a % 2 === 0 || b % 2 === 0 ? a + b : a * b;
+// }
+
+// console.log(testit(10, 20)); //30
+// console.log(testit(1, 1)); //1
+// console.log(testit(1, 3)); //3
+// console.log(testit(1, 2)); //3
+// console.log(testit(0, 1)); //1
+
+function divisibleByLast(n) {
+  let arrayOfNumbers = `${n}`.split("").map((el) => Number(el));
+  let result = [false];
+  for (let i = 1; i < arrayOfNumbers.length; i++) {
+    if (arrayOfNumbers[i - 1] === 0) {
+      result.push(false);
+    } else if (arrayOfNumbers[i] % arrayOfNumbers[i - 1] === 0) {
+      result.push(true);
+    } else if (arrayOfNumbers[i] % arrayOfNumbers[i - 1] !== 0) {
+      result.push(false);
+    }
+  }
+
+  return result;
+}
+
+console.log(divisibleByLast(1337));
+console.log(divisibleByLast(635));
+console.log(divisibleByLast(2026));
+console.log(divisibleByLast(73312));
